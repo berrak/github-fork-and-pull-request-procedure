@@ -23,9 +23,9 @@ Fetch the upstream branches and latest commits to bring them into your local mac
         # View all branches. The alias 'vbr' expands to 'branch -va', including those from upstream
         git vbr
 
-Merge the upstream master branch with your own master. The 'mef' and the 'sw2'-alias expands to 'merge --ff-only' and 'checkout' respectively.
+Merge the upstream master branch with your own master. The 'sw2' and the 'mef'-alias expands to 'checkout' and 'merge --ff-only' respectively.
 
-        # Ensure you are on the local master branch and merge with upstream. 
+        # Ensure you are on the local master branch and merge with upstream.
         git sw2 master
         git mef upstream/master
 
@@ -41,14 +41,14 @@ Update the repository code to solve the issue.
         # Save and commit in your local working branch. Git alias 'com' expands to 'commit'.
         git sw2 issue-with-xxx
         git add .
-        git com - m 'fix-xxx'
+        git com -m 'fix-xxx'
 
-## Prepare your local work, before pushing to your fork on Github 
+## Prepare your local work, before pushing to your fork on Github
 
 In case any new commits has been made to the upstream master branch, rebase your development branch. This will make coming merge a simple 'fast-forward' without any code conflict resolution issues.
 
         # Fetch upstream master and merge with your master branch
-        git sw2 master        
+        git sw2 master
         git fetch upstream
         git mef upstream/master
 
@@ -67,7 +67,7 @@ Alternatively, if your work consists of many small commits, squash them into one
 
 ## Submitting
 
-Push the current branch and set the remote as upstream and, show all branches. 
+Push the current branch and set the remote as upstream and, show all branches.
 
         # Push to your forked repo. Alias 'com' expands to 'commit'.
         git sw2 issue-with-xxx
@@ -94,7 +94,7 @@ When your work has been accepted and merged, remove your development branch sinc
 
         # Update your local repository with upstream and, then update your fork on Github.
         git fetch upstream
-        git mef upstream/masterV
+        git mef upstream/master
         git push
 
 [Maybe use the 'git dbr' as the as the last command above to eliminate the Warning?]
@@ -115,8 +115,7 @@ My '~/.gitconfig' when I'm working with git.
                 vhi = log --graph --pretty=format:'%Cred%h%Creset -%C(Yellow)%d%Creset%s%Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
                 vbr = branch -a
                 vre = remote -v
-                vta = show
-                vdi = show
+                vdi = diff --staged
                 dbr = branch -d
                 mer = merge --no-ff
                 mef = merge --ff-only

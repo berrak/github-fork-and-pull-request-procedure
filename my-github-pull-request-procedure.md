@@ -62,8 +62,7 @@ My '~/.gitconfig' when I'm working with git.
                 vhi = log --graph --pretty=format:'%Cred%h%Creset -%C(Yellow)%d%Creset%s%Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
                 vbr = branch -a
                 vre = remote -v
-                vta = show
-                vdi = show
+                vdi = diff --staged
                 dbr = branch -d
                 mer = merge --no-ff
                 mef = merge --ff-only

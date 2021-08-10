@@ -1,6 +1,6 @@
-# How to fork a repository and how-to handle incoming pull requests
+# How to fork a repository and handle incoming pull requests (PR)
 
-These documents are written so I have quick access to Github forking and the pull request procedure. Maybe someone else will find these useful as well. Mastering the forking procedure is important since you can contribute and, give back to the open source development.
+These documents are written so I have quick access to Github forking and, the pull request procedure. Maybe someone else will find these useful as well. Mastering the forking procedure is important since you can contribute and, give back to the open source development.
 
 - [My forking procedure](my-github-fork-procedure.md)
 
@@ -22,8 +22,7 @@ This is my git configuration file, i.e. '~/.gitconfig' when working with git. Th
                 vhi = log --graph --pretty=format:'%Cred%h%Creset -%C(Yellow)%d%Creset%s%Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
                 vbr = branch -a
                 vre = remote -v
-                vta = show
-                vdi = show
+                vdi = diff --staged
                 dbr = branch -d
                 mer = merge --no-ff
                 mef = merge --ff-only
