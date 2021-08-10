@@ -1,6 +1,6 @@
 # How to fork a repository and how-to handle incoming pull requests
 
-These documents are written so I have quick access to the forking procedure as well as the pull request procedure. maybe someone else find them useful as well. mastering the forking procedure is important to contribute the open source development made all over thw world.
+These documents are written so I have quick access to Github forking and the pull request procedure. Maybe someone else will find these useful as well. Mastering the forking procedure is important since you can contribute and, give back to the open source development.
 
 - [My forking procedure](my-github-fork-procedure.md)
 
@@ -8,7 +8,7 @@ These documents are written so I have quick access to the forking procedure as w
 
 ## Some useful aliases to configure in '.gitconfig'
 
-My '~/.gitconfig' when working with git. The only other git commands I most often use is 'pull', 'push' and 'fetch' and, they are pretty self explanatory and do not need any aliases.
+This is my git configuration file, i.e. '~/.gitconfig' when working with git. The other common git commands I use is 'push', 'pull' and 'fetch' and, they are pretty self explanatory and do not need any aliases.
 
         [color]
                 ui = auto

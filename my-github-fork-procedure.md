@@ -1,18 +1,18 @@
 # Forking a Github repository
 
-How to handle an incoming Pull Request (PR) for your own repository, see [my pull request procedure](my-github-pull-request-procedure.md).
+How to handle an incoming Pull Request (PR) for your own repository, look here [my pull request procedure](my-github-pull-request-procedure.md).
 
-Use the `Fork` button to fork the Github repository. Here `afiskon/stm32-ssd1306` is the example repository. This creates the forked user Github repository (afiskon) repository in your own account (berrak), the 'forker'. Now, clone the forked repository to your local machine to make required code changes.
+Use the `Fork` button to fork the Github repository. Here I use `afiskon/stm32-ssd1306` as an example repository. This creates the forked user Github repository (afiskon) repository in your own account (berrak), the 'forker'. Now, clone the forked repository to your local machine to make the required code changes.
 
         # Clone your fork to your local machine
         git clone https://github.com/berrak/stm32-ssd1306.git
 
 ## Keep your local fork up to date
 
-        # Configure upstream repo to remotes
+        # Configure upstream repository to remotes
         git remote add upstream https://github.com/afiskon/stm32-ssd1306.git
 
-        # Verify new remote named upstream. The alias 'vre' expands to 'remote -v'.
+        # Verify the new remote, named upstream. The alias 'vre' expands to 'remote -v'.
         git vre
 
 Fetch the upstream branches and latest commits to bring them into your local machine repository.
@@ -38,14 +38,14 @@ Create a new branch named with an informative name, e.g. 'issue-with-xxx'.
 
 Update the repository code to solve the issue.
 
-        # Save, commit in your local working branch. Alias 'com' expands to 'commit'.
+        # Save and commit in your local working branch. Git alias 'com' expands to 'commit'.
         git sw2 issue-with-xxx
         git add .
         git com - m 'fix-xxx'
 
-## Prepare your local work before pushing to your fork on Github 
+## Prepare your local work, before pushing to your fork on Github 
 
-In case any new commits has been made to the upstream master branch, rebase your development branch. This will make the merge a simple 'fast-forward' without any code conflict resolution issues.
+In case any new commits has been made to the upstream master branch, rebase your development branch. This will make coming merge a simple 'fast-forward' without any code conflict resolution issues.
 
         # Fetch upstream master and merge with your master branch
         git sw2 master        
@@ -54,7 +54,7 @@ In case any new commits has been made to the upstream master branch, rebase your
 
 ## One commit or many?
 
-        # Rebase your development branch to the updated master
+        # Rebase your development branch 'issue-with-xxx' to the updated master
         git sw2 issue-with-xxx
 
         # If your work consists of only one commit
@@ -67,7 +67,7 @@ Alternatively, if your work consists of many small commits, squash them into one
 
 ## Submitting
 
-To push the current branch and set the remote as upstream and, show all local and remote branches. 
+Push the current branch and set the remote as upstream and, show all branches. 
 
         # Push to your forked repo. Alias 'com' expands to 'commit'.
         git sw2 issue-with-xxx
@@ -80,6 +80,24 @@ Go to the page for your fork on GitHub, select your 'issue-with-xxx' development
 ## Creating an issue
 
 Create a new  `Issue` in the owners repository and mention that a pull request for 'issue-with-xxx' now exists and, that it solves the problem.
+
+## When PR has been accepted and merged
+
+When your work has been accepted and merged, remove your development branch since it is not needed any more.
+
+        # Remove development branch
+        git sw2 master
+        git dbr issue-with-xxx
+                warning: deleting branch 'add-support-for-stm32g0' that has been merged to
+                'refs/remotes/origin/add-support-for-stm32g0', but not yet merged to HEAD.
+                Deleted branch add-support-for-stm32g0 (was dbda6c1).
+
+        # Update your local repository with upstream and, then update your fork on Github.
+        git fetch upstream
+        git mef upstream/masterV
+        git push
+
+[Maybe use the 'git dbr' as the as the last command above to eliminate the Warning?]
 
 # Used Git aliases configuration
 
