@@ -97,7 +97,7 @@ When your work has been accepted and merged, remove your development branch sinc
         git mef upstream/master
         git push
 
-[Maybe use the 'git dbr' as the as the last command above to eliminate the Warning?]
+[Maybe use the 'git dbr' as the last command above, to eliminate the Warning?]
 
 # Used Git aliases configuration
 
