@@ -69,7 +69,7 @@ Alternatively, if your work consists of many small commits, squash them into one
 
 Push the current branch and set the remote as upstream and, show all branches.
 
-        # Push to your forked repo. Alias 'com' expands to 'commit'.
+        # Push to your forked repo.
         git sw2 issue-with-xxx
         git push --set-upstream origin issue-with-xxx
         git vbr
