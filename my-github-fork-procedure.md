@@ -1,19 +1,23 @@
-# Forking a Github repository
+# Pull Request (PR) procedures
 
-How to handle an incoming Pull Request (PR) for your own repository, look here [my pull request procedure](my-github-pull-request-procedure.md).
+How to handle an incoming Pull Request (PR) for your repository? Look here [my pull request procedure](my-github-pull-request-procedure.md).
 
-Use the `Fork` button to fork the Github repository. Here I use `afiskon/stm32-ssd1306` as an example repository. This creates the forked user Github repository (afiskon) repository in your own account (berrak), the 'forker'. Now, clone the forked repository to your local machine to make the required code changes.
+## Forking a Github repository to create a PR
+
+Use the `Fork` button to fork the GitHub original repository. Here I use `afiskon/stm32-ssd1306` as an example repository. 
+Your repository forks the original, and you become the `forker`. Next, clone the forked repository to your local machine to make the required code changes.
 
         # Clone your fork to your local machine
         git clone https://github.com/berrak/stm32-ssd1306.git
 
-## Keep your local fork up to date
-
-        # Configure upstream repository to remotes
+        # Configure upstream repository as a remote
+        cd stm32-ssd1306
         git remote add upstream https://github.com/afiskon/stm32-ssd1306.git
 
         # Verify the new remote, named upstream. The alias 'vre' expands to 'remote -v'.
         git vre
+
+## General procedure to keep your local fork up to date
 
 Fetch the upstream branches and latest commits to bring them into your local machine repository.
 
@@ -23,15 +27,17 @@ Fetch the upstream branches and latest commits to bring them into your local mac
         # View all branches. The alias 'vbr' expands to 'branch -va', including those from upstream
         git vbr
 
-Merge the upstream master branch with your own master. The 'sw2' and the 'mef'-alias expands to 'checkout' and 'merge --ff-only' respectively.
+Merge the upstream master branch with your own master. Then, the 'sw2' and the 'mef'-alias expand to 'checkout' and 'merge --ff-only' respectively. Some repositories use the new branch name `main` instead of the long-time well-established name of `master` for their primary branch.
 
         # Ensure you are on the local master branch and merge with upstream.
         git sw2 master
         git mef upstream/master
 
-## Create a working branch and, start to works with it locally
+If the latter two steps follow a fresh clone of your fork, everything is already up to date, but this is the up-to-date procedure.
 
-Create a new branch named with an informative name, e.g. 'issue-with-xxx'.
+## Create a working branch and, start to work with files locally
+
+Create a new branch with an informative name, e.g., `issue-with-xxx`.
 
         # Create a new branch and switch to it.
         git nbr issue-with-xxx
@@ -45,14 +51,14 @@ Update the repository code to solve the issue.
 
 ## Prepare your local work, before pushing to your fork on Github
 
-In case any new commits has been made to the upstream master branch, rebase your development branch. This will make coming merge a simple 'fast-forward' without any code conflict resolution issues.
+Rebase your development branch if any new upstream master branch commits. The future merge is a simple `fast-forward` without code conflict resolution issues. If this is a fresh clone, this is not a required step.
 
         # Fetch upstream master and merge with your master branch
         git sw2 master
         git fetch upstream
         git mef upstream/master
 
-## One commit or many?
+## Created multiple changes and work has been done over some time?
 
         # Rebase your development branch 'issue-with-xxx' to the updated master
         git sw2 issue-with-xxx
@@ -65,9 +71,9 @@ Alternatively, if your work consists of many small commits, squash them into one
         # Squash all commits on your development branch
         git rebase -i master
 
-## Submitting
+## Finally, submitting
 
-Push the current branch and set the remote as upstream and, show all branches.
+Push the current branch `issue-with-xxx`, set the remote as upstream, and show all branches.
 
         # Push to your forked repo.
         git sw2 issue-with-xxx
@@ -75,15 +81,20 @@ Push the current branch and set the remote as upstream and, show all branches.
         git vbr
 
 
-Go to the page for your fork on GitHub, select your 'issue-with-xxx' development branch, and click the `Compare & pull request` button. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes on your development branch and update.
+Visit the page for your fork on GitHub.
 
-## Creating an issue
+- select your `issue-with-xxx` development branch
+- click the `Compare & pull request` button. 
+  
+Suppose you do not need to make any adjustments, i.e., resolve conflicts for your pull request. Then, your pull request will automatically track the changes on your development branch and update until you are ready. If there are no conflicts, push the updates to the original author's repository.
 
-Create a new  `Issue` in the owners repository and mention that a pull request for 'issue-with-xxx' now exists and, that it solves the problem.
+## Last pull request tasks
 
-## When PR has been accepted and merged
+GitHub will automatically add a notice on the author issue tracker if the issue number is in the branch or commit message. Therefore no separate new issue needs to be created. Otherwise, create a new  `Issue` in the owner's repository and mention that a pull request for `issue-with-xxx` now exists and that it solves the problem, but usually, the issue is first created and then a PR.
 
-When your work has been accepted and merged, remove your development branch since it is not needed any more.
+## When your PR has been accepted and merged by the original author
+
+Remove your development branch `issue-with-xxx` when merged by the author. The local branch is not needed anymore.
 
         # Remove development branch
         git sw2 master
@@ -99,9 +110,9 @@ When your work has been accepted and merged, remove your development branch sinc
 
 [Maybe use the 'git dbr' as the last command above, to eliminate the Warning?]
 
-# Used Git aliases configuration
+# Feel free to use my handy Git aliases configuration 
 
-My '~/.gitconfig' when I'm working with git.
+My '~/.gitconfig' when I'm working with git. Change [user] fields.
 
         [color]
                 ui = auto
