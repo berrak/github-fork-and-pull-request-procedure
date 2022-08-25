@@ -5,7 +5,10 @@ How to handle an incoming Pull Request (PR) for your repository? Look here [my p
 ## Forking a Github repository to create a PR
 
 Use the `Fork` button to fork the GitHub original repository. Here I use `afiskon/stm32-ssd1306` as an example repository. 
-Your repository forks the original, and you become the `forker`. Next, clone the forked repository to your local machine to make the required code changes.
+
+- If the proposed change is minor, edit the file directly on GitHub. Your repository forks the original, and you become the `forker`.
+
+Let us assume that the proposed change is complicated and requires testing on your machine. Next, clone the forked repository to your local machine to make the necessary code changes.
 
         # Clone your fork to your local machine
         git clone https://github.com/berrak/stm32-ssd1306.git
