@@ -1,10 +1,12 @@
-# How to fork a repository and handle incoming pull requests (PR)
+# How to fork a repository, handle incoming pull requests (PR), and set up GitHub Pages
 
 These documents are written so I have quick access to Github forking and, the pull request procedure. Maybe someone else will find these useful as well. Mastering the forking procedure is important since you can contribute and, give back to the open source development.
 
 - [My forking procedure](my-github-fork-procedure.md)
 
 - [My pull request procedure](my-github-pull-request-procedure.md)
+
+- [My GitHub Pages for project procedure](my-githubpages-procedure-for-projects.md)
 
 ## Some useful aliases to configure in '.gitconfig'
 
