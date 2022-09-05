@@ -45,10 +45,11 @@ The branch contains likely other files and directories, excluded for the GHP wit
 
 Copy generated Doxygen content, i.e., all files recursively from the `/html` folder to `/docs` in the `gh-pages` branch.
 
-- Push the documentation.
+- Push the documentation. The `--set-upstream` means that local repo tracks changes in upstream.
 ```
 git add .
 git com -m 'add GHP content'
+git push --set-upstream origin gh-pages
 git push
 ```
 If this is a new repository use `git remote` first, but in this case the repository is already in use.
