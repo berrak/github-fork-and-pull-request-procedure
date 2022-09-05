@@ -40,7 +40,7 @@ The branch contains likely other files and directories, excluded with the `.giti
     -rw-r--r-- 1 bekr bekr    0 Sep  4 21:38 .nojekyll
 ```
 
-## Add static content for GHP site 'https://berrak/github.io/LedTask/'
+## Add static content for GHP site 'https://berrak.github.io/LedTask/'
 
 Copy generated Doxygen content, i.e., all files recursively from the `/html` folder to `/docs` in the `gh-pages` branch.
 
@@ -59,7 +59,7 @@ git push -u origin gh-pages
 
 Follow [GitHub instruction](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) to name the branch for your GHP files. 
 
-Finally, view the `Doxygen` generated class documentation for the project [LedTask](https://berrak/github.io/LedTask/docs/index.html).
+Finally, view the `Doxygen` generated class documentation for the project [LedTask](https://berrak.github.io/LedTask/).
 
 ## Update GHP content
 
