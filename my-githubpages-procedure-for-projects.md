@@ -27,17 +27,18 @@ git add .
 git commit -m 'initial Github web pages commit'
 ```
 
-The branch contains likely other files and directories, excluded with the `.gitignore`. First, remove all leftover files and directories since they serve no purpose for GHP. After this, the root folder contains only this.
+The branch contains likely other files and directories, excluded for the GHP with the `.gitignore`. The root folder contains, at minimum plus additional non-git-indexed files and directories. Do **not** delete the latter.
 
 ```
 ../LedTask (gh-pages)$ ls -la
-    total 20
     drwxr-xr-x 4 bekr bekr 4096 Sep  4 21:44 .
     drwxr-xr-x 8 bekr bekr 4096 Sep  4 19:38 ..
     drwxr-xr-x 2 bekr bekr 4096 Sep  4 21:37 docs
     drwxr-xr-x 8 bekr bekr 4096 Sep  4 21:39 .git
     -rw-r--r-- 1 bekr bekr  214 Sep  4 11:31 .gitignore
     -rw-r--r-- 1 bekr bekr    0 Sep  4 21:38 .nojekyll
+    ...
+    ...
 ```
 
 ## Add static content for GHP site 'https://berrak.github.io/LedTask/'
