@@ -65,9 +65,11 @@ Finally, view the `Doxygen` generated class documentation for the project [LedTa
 
 ## Update GHP content
 
-Push the new content to the GitHub repository.
+Add and push additional content to the GitHub repository on the `gh-pages` branch.
 
 ```
+git add .
+git com -m 'some comment'
 git push
 ```
 
@@ -77,6 +79,7 @@ Switch to `master` branch and push new core content as usual.
 
 ```
 git sw2 master
+...
 git push
 ```
 
@@ -84,5 +87,6 @@ If GHP needs to be updated, switch to `gh-pages` branch and push changes.
 
 ```
 git sw2 gh-pages
+...
 git push
 ```
