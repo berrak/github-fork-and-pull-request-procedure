@@ -19,7 +19,6 @@ git rm -fr .
 It's possible to keep the GHP source in the `root`-folder or in a subdirectory named `/docs`. However, Doxygen generates lots of files in the same directory. Therefore I chose the latter alternative with `/docs`. Since we will push ready-made static web pages, we add the `.nojekyll` file in the root as [required](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators). It probably a good idea to add the `.gitignore` from the `master` branch.
 
 ```
-git init
 mkdir docs
 .gitignore
 touch .nojekyll
@@ -50,9 +49,8 @@ Copy generated Doxygen content, i.e., all files recursively from the `/html` fol
 git add .
 git com -m 'add GHP content'
 git push --set-upstream origin gh-pages
-git push
 ```
-If this is a new repository use `git remote` first, but in this case the repository is already in use.
+If this is a new repository use `git remote` first, but in this case the repository (master branch) already exist.
 ```
 git remote add origin https://github.com/berrak/LedTask.git
 git vre
@@ -73,7 +71,7 @@ git com -m 'some comment'
 git push
 ```
 
-## Work with 'master' and 'gh-pages` branches
+## Work with 'master' and 'gh-pages' branches
 
 Switch to `master` branch and push new core content as usual.
 
